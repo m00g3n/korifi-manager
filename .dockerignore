@@ -1,0 +1,11 @@
+# More info: https://docs.docker.com/engine/reference/builder/#dockerignore-file
+# Ignore all
+**
+# Allow
+!cmd/main.go
+!api
+!pkg
+!internal
+!korifi.yaml
+!go.sum
+!go.mod

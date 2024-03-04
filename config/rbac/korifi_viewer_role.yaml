@@ -1,0 +1,27 @@
+# permissions for end users to view korifis.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: korifi-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: korify
+    app.kubernetes.io/part-of: korify
+    app.kubernetes.io/managed-by: kustomize
+  name: korifi-viewer-role
+rules:
+- apiGroups:
+  - operator.kyma-project.io
+  resources:
+  - korifis
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - operator.kyma-project.io
+  resources:
+  - korifis/status
+  verbs:
+  - get
